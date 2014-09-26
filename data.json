@@ -187,6 +187,23 @@
 
         "projects": {
             "1": {
+                "summry": "Chen's Resume LaTeX Template - XNemo",
+                "details": {
+                    "1": {
+                        "detail": "Create this template for people to use.",
+                        "link": "https://github.com/cx44yale/XNemo"
+                    }
+                },
+                "start": "2014-09",
+                "end": "2014-09",
+                "timeline_color": [236, 59, 43],
+                "what_i_did": [
+                    "Customized LaTeX template blocks under Jinja environment.",
+                    "Made the resume generation customizable in a simple JSON file."
+                ]
+            },
+
+            "2": {
                 "summry": "Chen's Yale Zoo Machine Login History",
                 "details": {
                     "1": {
@@ -204,7 +221,7 @@
                 ]
             },
             
-            "2": {
+            "3": {
                 "summry": "Chen's movement tracking",
                 "details": {
                     "1": {
@@ -221,7 +238,7 @@
                 ]
             },
             
-            "3": {
+            "4": {
                 "summry": "Web Shortest Path Solving Tool",
                 "details": {
                     "1": {
@@ -239,7 +256,7 @@
                 ]
             },
             
-            "4": {
+            "5": {
                 "summry": "4 Safari Web Games (Only available on Safari)",
                 "details": {
                     "1": {
@@ -269,7 +286,7 @@
                 ]
             },
             
-            "5": {
+            "6": {
                 "summry": "2 iPhone / iPad Apps (Back End)",
                 "details": {
                     "1": {
