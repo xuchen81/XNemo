@@ -43,7 +43,7 @@
                 "country": "America",
                 "start": "2014-05",
                 "end": "present",
-                "color": [171, 210, 125],
+                "timeline_color": [171, 210, 125],
                 "what_i_did": [
                     "Everything"
                 ]
@@ -57,7 +57,7 @@
                 "country": "America",
                 "start": "2013-11",
                 "end": "2014-01",
-                "color": [114, 110, 154],
+                "timeline_color": [114, 110, 154],
                 "what_i_did": [
                     "Built and enhanced an automatic data integration system over big data.",
                     "Designed and implemented an image annotation system for collecting and training object detection data on Amazon Machnical Turk."
@@ -72,7 +72,7 @@
                 "country": "Canada",
                 "start": "2013-01",
                 "end": "2013-06",
-                "color": [125, 172, 1],
+                "timeline_color": [125, 172, 1],
                 "what_i_did": [
                     "The only server engineer that tracked, recorded, implemented backends for high-volume, transactional applications using PHP and Redis.",
                     "Implemented backend data tracking and analysis system.",
@@ -89,7 +89,7 @@
                 "country": "Canada",
                 "start": "2012-04",
                 "end": "2012-09",
-                "color": [252, 180, 12],
+                "timeline_color": [252, 180, 12],
                 "what_i_did": [
                     "Enhanced Mappedin Platform under Node.js framework and MongoDB.",
                     "Created Mappedin map editor.",
@@ -107,7 +107,7 @@
                 "country": "America",
                 "start": "2011-08",
                 "end": "2011-12",
-                "color": [138, 173, 63],
+                "timeline_color": [138, 173, 63],
                 "what_i_did": [
                     "Worked with a team of world-class software engineers.",
                     "Implemented my own live chat project with Google Optimizer Multivariable Testing under tight deadline which increased Minted revenue by a significant amount.",
@@ -125,7 +125,7 @@
                 "country": "Canada",
                 "start": "2011-01",
                 "end": "2011-04",
-                "color": [80, 65, 36],
+                "timeline_color": [80, 65, 36],
                 "what_i_did": [
                     "Developed both website and client using JavaScript, PHP and Python.",
                     "Implemented new user experience for the sales promotion using jQuery.",
@@ -142,7 +142,7 @@
                 "country": "Canada",
                 "start": "2010-05",
                 "end": "2010-08",
-                "color": [17, 76, 148],
+                "timeline_color": [17, 76, 148],
                 "what_i_did": [
                     "Participated in 3 Blackberry Apps: Microsoft MSN, Canpages and Intuit."
                 ]
@@ -156,7 +156,7 @@
                 "country": "America",
                 "start": "2010-01",
                 "end": "2010-04",
-                "color": [249, 67, 2],
+                "timeline_color": [249, 67, 2],
                 "what_i_did": [
                     "Built web app using PHP CodeIgniter MVC framework.",
                     "Optimized and maintained QuinStreet client sites by converting sites to PHP CodeIgniter framework."
@@ -171,7 +171,7 @@
                 "country": "Canada",
                 "start": "2009-05",
                 "end": "2009-08",
-                "color": [46, 141, 184],
+                "timeline_color": [46, 141, 184],
                 "what_i_did": [
                     "Designed and built a new website for the company.",
                     "Implemented and optimized complicated DB queries for large data.",
@@ -196,7 +196,7 @@
                 },
                 "start": "2013-08",
                 "end": "2013-08",
-                "color": [165, 24, 49],
+                "timeline_color": [165, 24, 49],
                 "what_i_did": [
                     "Written on Google App Engine using Python.",
                     "Implemented graph creation using Raphael.",
@@ -214,7 +214,7 @@
                 },
                 "start": "2013-07",
                 "end": "2013-07",
-                "color": [77, 65, 48],
+                "timeline_color": [77, 65, 48],
                 "what_i_did": [
                     "Implemented location display using Google Maps API.",
                     "Polished storyline."
@@ -231,7 +231,7 @@
                 },
                 "start": "2012-10",
                 "end": "2012-10",
-                "color": [175, 153, 249],
+                "timeline_color": [175, 153, 249],
                 "what_i_did": [
                     "Written on Google App Engine using Python.",
                     "Implemented graph creation using Raphael.",
@@ -261,7 +261,7 @@
                 },
                 "start": "2011-07",
                 "end": "2011-09",
-                "color": [63, 81, 93],
+                "timeline_color": [63, 81, 93],
                 "what_i_did": [
                     "Written on Google App Engine using Python.",
                     "Implemented game saving feature using HTML5 JavaScript Database.",
@@ -279,7 +279,7 @@
                 },
                 "start": "2010-03",
                 "end": "2010-03",
-                "color": [255, 71, 99],
+                "timeline_color": [255, 71, 99],
                 "what_i_did": [
                     "Built data storage using Google GQL API.",
                     "Implemented all the back end API for the client side of the beer store.",
@@ -299,7 +299,7 @@
                 "country": "America",
                 "start": 2013,
                 "end": 2014,
-                "color": [16, 76, 146],
+                "timeline_color": [16, 76, 146],
                 "degree": "Master of Computer Science"
             },
             
@@ -310,7 +310,7 @@
                 "country": "Canada",
                 "start": 2007,
                 "end": 2012,
-                "color": [255, 138, 1],
+                "timeline_color": [255, 138, 1],
                 "degree": "Honors Bachelor of Computer Science (Co-op)"
             }
         }

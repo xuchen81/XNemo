@@ -160,7 +160,7 @@
 \section{<((data["experience"]["title"]))>}
 ((* for k in data["experience"]["companies"] | get_sorted_keys *))
 
-\ifthenelse{\boolean{usecolor}}{\definecolor{compcolor}{RGB}{<((data["experience"]["companies"][k]["color"][0]))>, <((data["experience"]["companies"][k]["color"][1]))>, <((data["experience"]["companies"][k]["color"][2]))>}}{\definecolor{compcolor}{RGB}{0, 0, 0}}
+\ifthenelse{\boolean{usecolor}}{\definecolor{compcolor}{RGB}{<((data["experience"]["companies"][k]["timeline_color"][0]))>, <((data["experience"]["companies"][k]["timeline_color"][1]))>, <((data["experience"]["companies"][k]["timeline_color"][2]))>}}{\definecolor{compcolor}{RGB}{0, 0, 0}}
 \tllabelcventryn[compcolor]
 {<(( data["experience"]["companies"][k]["start"] | compute_time_in_double))>}{<((data["experience"]["companies"][k]["end"] | compute_time_in_double))>}
 {<(( data["experience"]["companies"][k]["start"]|compute_time_in_text))>}{<((data["experience"]["companies"][k]["end"] | compute_time_in_text))>}
@@ -177,7 +177,7 @@
 \section{<((data["projects"]["title"]))>}
 ((* for k in data["projects"]["projects"] | get_sorted_keys *))
     ((* if data["projects"]["projects"][k]["start"] == data["projects"]["projects"][k]["end"] *))
-        \ifthenelse{\boolean{usecolor}}{\definecolor{projcolor}{RGB}{<((data["projects"]["projects"][k]["color"][0]))>, <((data["projects"]["projects"][k]["color"][1]))>, <((data["projects"]["projects"][k]["color"][2]))>}}{\definecolor{projcolor}{RGB}{0, 0, 0}}
+        \ifthenelse{\boolean{usecolor}}{\definecolor{projcolor}{RGB}{<((data["projects"]["projects"][k]["timeline_color"][0]))>, <((data["projects"]["projects"][k]["timeline_color"][1]))>, <((data["projects"]["projects"][k]["timeline_color"][2]))>}}{\definecolor{projcolor}{RGB}{0, 0, 0}}
         \tldatelabelcventry[projcolor]
         {<((data["projects"]["projects"][k]["start"]|compute_time_in_double))>}
         {<((data["projects"]["projects"][k]["start"]|compute_time_in_text))>}
@@ -189,7 +189,7 @@
             \end{itemize}
         \end{itemize}}
     ((* else *))
-        \ifthenelse{\boolean{usecolor}}{\definecolor{projcolor}{RGB}{<((data["projects"]["projects"][k]["color"][0]))>, <((data["projects"]["projects"][k]["color"][1]))>, <((data["projects"]["projects"][k]["color"][2]))>}}{\definecolor{projcolor}{RGB}{0, 0, 0}}
+        \ifthenelse{\boolean{usecolor}}{\definecolor{projcolor}{RGB}{<((data["projects"]["projects"][k]["timeline_color"][0]))>, <((data["projects"]["projects"][k]["timeline_color"][1]))>, <((data["projects"]["projects"][k]["timeline_color"][2]))>}}{\definecolor{projcolor}{RGB}{0, 0, 0}}
         \tllabelcventryn[projcolor]
         {<((data["projects"]["projects"][k]["start"]|compute_time_in_double))>}
         {<((data["projects"]["projects"][k]["end"]|compute_time_in_double))>}
@@ -207,7 +207,7 @@
 
 \section{<((data["education"]["title"]))>}
 ((* for k in data["education"]["educations"] | get_sorted_keys *))
-    \ifthenelse{\boolean{usecolor}}{\definecolor{ecolor}{RGB}{<((data["education"]["educations"][k]["color"][0]))>, <((data["education"]["educations"][k]["color"][1]))>, <((data["education"]["educations"][k]["color"][2]))>}}{\definecolor{ecolor}{RGB}{0, 0, 0}}
+    \ifthenelse{\boolean{usecolor}}{\definecolor{ecolor}{RGB}{<((data["education"]["educations"][k]["timeline_color"][0]))>, <((data["education"]["educations"][k]["timeline_color"][1]))>, <((data["education"]["educations"][k]["timeline_color"][2]))>}}{\definecolor{ecolor}{RGB}{0, 0, 0}}
     \tlcventry[ecolor]{<((data["education"]["educations"][k]["start"]))>}{<((data["education"]["educations"][k]["end"]))>}
     {<((data["education"]["educations"][k]["school"]))>}
     {<((data["education"]["educations"][k]["city"]))>}
