@@ -1,0 +1,225 @@
+\documentclass[11pt, a4paper]{moderncv}
+\usepackage{ifthen}
+\definecolor{mainc}{RGB}{<((data["global_info"]["theme_color"][0]))>, <((data["global_info"]["theme_color"][1]))>, <((data["global_info"]["theme_color"][2]))>}
+\newboolean{usecolor}
+\setboolean{usecolor}{<((data["global_info"]["usecolor"]))>}
+\ifthenelse{\boolean{usecolor}}{\moderncvtheme[blue]{classic}}{\moderncvtheme[black]{classic}}
+\usepackage[utf8]{inputenc}
+\usepackage[top=1.1cm, bottom=2.0cm, left=1cm, right=1cm]{geometry}
+\usepackage[firstyear=<((data["global_info"]["start_year"]))>,lastyear=<((last_year))>]{moderntimeline}
+
+\makeatletter
+\pgfmathsetmacro\tl@textstartabove{\tl@width-2pt}
+\NewDocumentCommand\tldatelabelcventryn{O{center}O{color1}mmmmmmm}{%
+\pgfmathsetmacro\tl@endyear{\tl@lastyear}%
+\pgfmathsetmacro\tl@startfraction{(#3-\tl@firstyear)/(\tl@lastyear-\tl@firstyear)}%
+\pgfmathsetmacro\tl@endfraction{(\tl@endyear-\tl@firstyear)/(\tl@lastyear-\tl@firstyear)}%
+ \cventry{\tikz[baseline]{%
+     \useasboundingbox (0,-1.5ex) rectangle (\hintscolumnwidth,1ex);
+     \fill [\tl@runningcolor] (0,0)
+        rectangle (\hintscolumnwidth,\tl@runningwidth);
+     \fill [#2] (0,0)
+        ++(\tl@startfraction*\hintscolumnwidth,0pt)
+        node [tl@startyear,yshift=5pt,anchor=#1] {#4}
+        node {$\bullet$};
+   }
+}
+{#5}{#6}{#7}{#8}{#9}
+}
+\newcommand\tllabelcventryn[9][color1]{%
+  \gdef\Argi{#1}%
+  \gdef\Argii{#2}%
+  \gdef\Argiii{#3}%
+  \gdef\Argiv{#4}%
+  \gdef\Argv{#5}%
+  \gdef\Argvi{#6}%
+  \gdef\Argvii{#7}%
+  \gdef\Argviii{#8}%
+  \gdef\Argix{#9}%
+  \auxtllabelcventryn
+}
+\def\auxtllabelcventryn#1{%
+  \gdef\Argx{#1}%
+\pgfmathsetmacro\tl@endyear{ifthenelse(\Argiii==0,\tl@lastyear,\Argiii)}
+\pgfmathsetmacro\tl@startfraction{(\Argii-\tl@firstyear)/(\tl@lastyear-\tl@firstyear)}%
+\pgfmathsetmacro\tl@endfraction{(\tl@endyear-\tl@firstyear)/(\tl@lastyear-\tl@firstyear)}%
+ \cventry{\tikz[baseline=0pt]{
+     \fill [\tl@runningcolor] (0,0)
+        rectangle (\hintscolumnwidth,\tl@runningwidth);
+     \useasboundingbox (0,-1.5ex)
+        rectangle (\hintscolumnwidth,1ex);
+     \fill [\Argi] (0,0)
+        ++(\tl@startfraction*\hintscolumnwidth,0pt)
+        node [tl@startyear,anchor=north east] {\Argiv} node [tl@startyear,above] {\Argv}
+        rectangle (\tl@endfraction*\hintscolumnwidth,\tl@width-1pt);
+     \pgfmathsetlength{\pgf@xa}{\Argiii} \ifdim\pgf@xa=0pt
+        \shade [left color=\Argi] (\tl@startfraction*\hintscolumnwidth,0)
+            rectangle (\tl@endfraction*\hintscolumnwidth,\tl@width);
+     \else
+        \fill [\Argi] (\tl@startfraction*\hintscolumnwidth,0)
+            rectangle (\tl@endfraction*\hintscolumnwidth,\tl@width);
+     \fi
+     }
+}
+{\Argvi}{\Argvii}{\Argviii}{\Argix}{\Argx}%
+}
+\makeatother
+\tltextstart[north]{\scriptsize}
+\tltextend[south]{\scriptsize}
+
+
+\makeatletter
+\renewcommand{\tldatelabelcventry}[8][color1]{%
+\pgfmathsetmacro\tl@endyear{\tl@lastyear}%
+\pgfmathsetmacro\tl@startfraction{(#2-\tl@firstyear)/(\tl@lastyear-\tl@firstyear)}%
+\pgfmathsetmacro\tl@endfraction{(\tl@endyear-\tl@firstyear)/(\tl@lastyear-\tl@firstyear)}%
+ \cventry{\tikz[baseline]{%
+     \useasboundingbox (0,-1.5ex) rectangle (\hintscolumnwidth,1ex);
+     \fill [\tl@runningcolor] (0,0)
+        rectangle (\hintscolumnwidth,\tl@runningwidth);
+     \fill [#1] (0,0)
+        ++(\tl@startfraction*\hintscolumnwidth,0pt)
+        node [tl@startyear] {#3}
+        node {$\bullet$};
+   }
+}
+{#4}{#5}{#6}{#7}{#8}
+}
+\makeatother
+
+\makeatletter
+\renewcommand*{\makecvtitle}{%
+  % recompute lengths (in case we are switching from letter to resume, or vice versa)
+  \recomputecvlengths%
+  % optional detailed information box
+  \newbox{\makecvtitledetailsbox}%
+  \savebox{\makecvtitledetailsbox}{%
+    \addressfont\color{color2}%
+    \begin{tabular}[b]{@{}r@{}}%
+      \ifthenelse{\isundefined{\@addressstreet}}{}{\makenewline\addresssymbol\@addressstreet%
+        \ifthenelse{\equal{\@addresscity}{}}{}{\makenewline\@addresscity}}% if \addresstreet is defined, \addresscity will always be defined but could be empty
+      \ifthenelse{\isundefined{\@phone}}{}{\makenewline\phonesymbol\@phone}%
+      \ifthenelse{\isundefined{\@email}}{}{\makenewline\emailsymbol\emaillink{\@email}}%
+      \ifthenelse{\isundefined{\@homepage}}{}{\makenewline\homepagesymbol\httplink{\@homepage}}%
+      \ifthenelse{\isundefined{\@extrainfo}}{}{\makenewline\@extrainfo}%
+    \end{tabular}
+  }%
+  % optional picture box
+  \newbox{\makecvtitlepicturebox}%
+  \savebox{\makecvtitlepicturebox}{%
+    \ifthenelse{\isundefined{\@photo}}%
+    {}%
+    {%
+      \hspace*{\separatorcolumnwidth}%
+      \color{color1}%
+      \setlength{\fboxrule}{\@photoframewidth}%
+      \ifdim\@photoframewidth=0pt%
+        \setlength{\fboxsep}{0pt}\fi%
+      \framebox{\includegraphics[width=\@photowidth]{\@photo}}}}%
+  % name and title
+  \newlength{\makecvtitledetailswidth}\settowidth{\makecvtitledetailswidth}{\usebox{\makecvtitledetailsbox}}%
+  \newlength{\makecvtitlepicturewidth}\settowidth{\makecvtitlepicturewidth}{\usebox{\makecvtitlepicturebox}}%
+  \ifthenelse{\lengthtest{\makecvtitlenamewidth=0pt}}% check for dummy value (equivalent to \ifdim\makecvtitlenamewidth=0pt)
+    {\setlength{\makecvtitlenamewidth}{\textwidth-\makecvtitledetailswidth-\makecvtitlepicturewidth}}%
+    {}%
+  \begin{minipage}[b]{\makecvtitlenamewidth}%
+    \namestyle{\@firstname\ \@familyname}%
+    \ifthenelse{\equal{\@title}{}}{}{\\[1.25em]\titlestyle{\@title}}%
+  \end{minipage}%
+  \hfill%
+  % detailed information
+  \llap{\usebox{\makecvtitledetailsbox}}% \llap is used to suppress the width of the box, allowing overlap if the value of makecvtitlenamewidth is forced
+  {\par\color{color2!50}\rule{\textwidth}{.25ex}\par}% <----- ADDED RULE
+  % optional photo
+  \usebox{\makecvtitlepicturebox}\\[1.0em]%
+  % optional quote
+  \ifthenelse{\isundefined{\@quote}}%
+    {}%
+    {{\centering\begin{minipage}{\quotewidth}\centering\quotestyle{\@quote}\end{minipage}\\[2.0em]}}%
+  \par}% to avoid weird spacing bug at the first section if no blank line is left after \makecvtitle
+\makeatother
+
+\setlength{\hintscolumnwidth}{3.5cm}
+
+\definecolor{firstnamec}{RGB}{185, 185, 185}
+\definecolor{lastnamec}{RGB}{115, 115, 115}
+\firstname{\textcolor{firstnamec}{<((data["personal_info"]["first_name"] | escape_tex))>}}
+\familyname{\textcolor{lastnamec}{<((data["personal_info"]["last_name"] | escape_tex))>}}
+\phone{<((data["personal_info"]["phone"] | escape_tex))>}
+\email{<((data["personal_info"]["email"] | escape_tex))>}
+\homepage{<((data["personal_info"]["website"] | escape_tex))>}
+\begin{document}
+\quote{<((data["quote"] | escape_tex))>}
+\maketitle
+
+\section{<((data["skill"]["title"]))>}
+((* for k in data["skill"]["skill_set"] | get_sorted_keys *))
+ \cvitem{<(( data["skill"]["skill_set"][k]["name"]))>}{((* for s in data["skill"]["skill_set"][k]["set"] *))<((s))>((*if not loop.last*)), ((* endif*))((* endfor *))}
+((* endfor *))
+
+\section{<((data["experience"]["title"]))>}
+((* for k in data["experience"]["companies"] | get_sorted_keys *))
+
+\ifthenelse{\boolean{usecolor}}{\definecolor{compcolor}{RGB}{<((data["experience"]["companies"][k]["color"][0]))>, <((data["experience"]["companies"][k]["color"][1]))>, <((data["experience"]["companies"][k]["color"][2]))>}}{\definecolor{compcolor}{RGB}{0, 0, 0}}
+\tllabelcventryn[compcolor]
+{<(( data["experience"]["companies"][k]["start"] | compute_time_in_double))>}{<((data["experience"]["companies"][k]["end"] | compute_time_in_double))>}
+{<(( data["experience"]["companies"][k]["start"]|compute_time_in_text))>}{<((data["experience"]["companies"][k]["end"] | compute_time_in_text))>}
+{<(( data["experience"]["companies"][k]["job_title"] ))> (<((data["experience"]["companies"][k]["name"]))>)}
+{<((data["experience"]["companies"][k]["city"]))>}
+{<((data["experience"]["companies"][k]["state"]))>}
+{<((data["experience"]["companies"][k]["country"]))>}{
+\begin{itemize}%
+    ((* for content in data["experience"]["companies"][k]["what_i_did"] *))\item <((content))> ((*if loop.last*)) \newline{}((* endif*))  ((* endfor *))
+\end{itemize}}
+((* endfor *))
+
+
+\section{<((data["projects"]["title"]))>}
+((* for k in data["projects"]["projects"] | get_sorted_keys *))
+    ((* if data["projects"]["projects"][k]["start"] == data["projects"]["projects"][k]["end"] *))
+        \ifthenelse{\boolean{usecolor}}{\definecolor{projcolor}{RGB}{<((data["projects"]["projects"][k]["color"][0]))>, <((data["projects"]["projects"][k]["color"][1]))>, <((data["projects"]["projects"][k]["color"][2]))>}}{\definecolor{projcolor}{RGB}{0, 0, 0}}
+        \tldatelabelcventry[projcolor]
+        {<((data["projects"]["projects"][k]["start"]|compute_time_in_double))>}
+        {<((data["projects"]["projects"][k]["start"]|compute_time_in_text))>}
+        {<((data["projects"]["projects"][k]["summry"]))>}{}{}{}{
+        \begin{itemize}
+            ((* for dk in data["projects"]["projects"][k]["details"] | get_sorted_keys *))\item <((data["projects"]["projects"][k]["details"][dk]["detail"]))> \url{<((data["projects"]["projects"][k]["details"][dk]["link"]))>} ((* endfor *))
+            \begin{itemize} 
+                ((* for dk in data["projects"]["projects"][k]["what_i_did"] *)) \item <((dk))> ((* endfor *))
+            \end{itemize}
+        \end{itemize}}
+    ((* else *))
+        \ifthenelse{\boolean{usecolor}}{\definecolor{projcolor}{RGB}{<((data["projects"]["projects"][k]["color"][0]))>, <((data["projects"]["projects"][k]["color"][1]))>, <((data["projects"]["projects"][k]["color"][2]))>}}{\definecolor{projcolor}{RGB}{0, 0, 0}}
+        \tllabelcventryn[projcolor]
+        {<((data["projects"]["projects"][k]["start"]|compute_time_in_double))>}
+        {<((data["projects"]["projects"][k]["end"]|compute_time_in_double))>}
+        {<((data["projects"]["projects"][k]["start"]|compute_time_in_text))>}
+        {<((data["projects"]["projects"][k]["end"]|compute_time_in_text))>}{4 Safari Web Games (Currently only available on Safari)}{}{}{}{
+        \begin{itemize} 
+            ((* for dk in data["projects"]["projects"][k]["details"] | get_sorted_keys *))\item <((data["projects"]["projects"][k]["details"][dk]["detail"]))> \url{<((data["projects"]["projects"][k]["details"][dk]["link"]))>} ((* endfor *))
+            \begin{itemize} 
+                ((* for dk in data["projects"]["projects"][k]["what_i_did"] *)) \item <((dk))> ((* endfor *))
+            \end{itemize}
+        \end{itemize}}
+    ((* endif *))
+((* endfor *))
+
+
+\section{<((data["education"]["title"]))>}
+((* for k in data["education"]["educations"] | get_sorted_keys *))
+    \ifthenelse{\boolean{usecolor}}{\definecolor{ecolor}{RGB}{<((data["education"]["educations"][k]["color"][0]))>, <((data["education"]["educations"][k]["color"][1]))>, <((data["education"]["educations"][k]["color"][2]))>}}{\definecolor{ecolor}{RGB}{0, 0, 0}}
+    \tlcventry[ecolor]{<((data["education"]["educations"][k]["start"]))>}{<((data["education"]["educations"][k]["end"]))>}
+    {<((data["education"]["educations"][k]["school"]))>}
+    {<((data["education"]["educations"][k]["city"]))>}
+    {<((data["education"]["educations"][k]["state"]))>}
+    {<((data["education"]["educations"][k]["country"]))>}
+    {<((data["education"]["educations"][k]["degree"]))>}
+((* endfor *))
+
+\section{<((data["interest"]["title"]))>}
+\cventry{}{((* for c in data["interest"]["interets"] *))<((c))>((*if not loop.last*)), ((* endif*))((* endfor *))}{}{}{}{}
+
+\section{REFERENCES}
+\cventry{}{References available upon request}{}{}{}{}
+
+\end{document}

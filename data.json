@@ -1,0 +1,324 @@
+{
+    "global_info": {
+        "usecolor": true,
+        "start_year": 2006,
+        "end_year": 2015,
+        "theme_color": [217, 229, 250]
+    },
+
+    "personal_info" : {
+        "first_name": "Chen",
+        "last_name": "Xu",
+        "phone": "203-xxx-xxxx",
+        "email": "xxxx.xu.xxxx@yale.edu",
+        "website": "www.cs.yale.edu/homes/chenxu"
+    },
+    
+    "quote": "``I am looking for projects that are cutting-edge, revolutionary and unique; something I can be proud of.''",
+
+    "skill": {
+        "title": "COMPUTER PROFICIENCY",
+
+        "skill_set": {
+            "1": {
+                "name": "Languages",
+                "set": ["Scheme", "Python", "C++", "C", "Java"]
+            },
+            
+            "2": {
+                "name": "Web Technologies",
+                "set": ["Django", "HTML/DOM", "JSON", "PHP", "JavaScript", "Node.js", "EC2", "Redis", "MySQL", "PostgresSQL", "MongoDB", "SQLAlchemy", "CSS", "AJAX", "jQuery"]
+            }
+        }
+    },
+    
+    "experience": {
+        "title": "WORK EXPERIENCE",
+        
+        "companies": {
+            "1": {
+                "name": "KuKy World Inc",
+                "job_title": "CTO",
+                "city": "New Haven",
+                "state": "Connecticut",
+                "country": "America",
+                "start": "2014-05",
+                "end": "present",
+                "color": [171, 210, 125],
+                "what_i_did": [
+                    "Everything"
+                ]
+            },
+            
+            "2": {
+                "name": "Dextro.co",
+                "job_title": "Python Data Engineer",
+                "city": "New Haven",
+                "state": "Connecticut",
+                "country": "America",
+                "start": "2013-11",
+                "end": "2014-01",
+                "color": [114, 110, 154],
+                "what_i_did": [
+                    "Built and enhanced an automatic data integration system over big data.",
+                    "Designed and implemented an image annotation system for collecting and training object detection data on Amazon Machnical Turk."
+                ]
+            },
+            
+            "3": {
+                "name": "Jinguapps.com",
+                "job_title": "Server Engineer",
+                "city": "Kitchener",
+                "state": "Ontaria",
+                "country": "Canada",
+                "start": "2013-01",
+                "end": "2013-06",
+                "color": [125, 172, 1],
+                "what_i_did": [
+                    "The only server engineer that tracked, recorded, implemented backends for high-volume, transactional applications using PHP and Redis.",
+                    "Implemented backend data tracking and analysis system.",
+                    "Built backend intelligence for people recommendation system."
+                ]
+            },
+            
+            
+            "4": {
+                "name": "Mappedin.com",
+                "job_title": "Software Engineer",
+                "city": "Kitchener",
+                "state": "Ontaria",
+                "country": "Canada",
+                "start": "2012-04",
+                "end": "2012-09",
+                "color": [252, 180, 12],
+                "what_i_did": [
+                    "Enhanced Mappedin Platform under Node.js framework and MongoDB.",
+                    "Created Mappedin map editor.",
+                    "Designed and implemented Mappedin Analytics page to track the usage of Mappedin kiosk using Google Chart.",
+                    "Initiated the new version of Mappedin kiosk.",
+                    "Improved on multiple performance and usability issues on both Mappedin admin tools and the kiosk."
+                ]
+            },
+            
+            "5": {
+                "name": "Minted.com",
+                "job_title": "Software Engineer",
+                "city": "San Francisco",
+                "state": "California",
+                "country": "America",
+                "start": "2011-08",
+                "end": "2011-12",
+                "color": [138, 173, 63],
+                "what_i_did": [
+                    "Worked with a team of world-class software engineers.",
+                    "Implemented my own live chat project with Google Optimizer Multivariable Testing under tight deadline which increased Minted revenue by a significant amount.",
+                    "Enhanced Minted Web-to-Proof system which processes an Adobe InDesign or Illustrator object to an image using Python.",
+                    "Implemented several components of friend referral project and the entire reporting using Python and SQLAlchemy.",
+                    "Improved SEO with features and bug fixes."
+                ]
+            },
+
+            "6": {
+                "name": "IMVU, Inc.",
+                "job_title": "Software Engineer",
+                "city": "Kitchener",
+                "state": "Ontaria",
+                "country": "Canada",
+                "start": "2011-01",
+                "end": "2011-04",
+                "color": [80, 65, 36],
+                "what_i_did": [
+                    "Developed both website and client using JavaScript, PHP and Python.",
+                    "Implemented new user experience for the sales promotion using jQuery.",
+                    "Integrated IMVU users with Socialvibe promotion ads.",
+                    "Wrote jQuery Qunit tests for internal JS library."
+                ]
+            },
+
+            "7": {
+                "name": "Xtreme Labs, Inc.",
+                "job_title": "Software Engineer",
+                "city": "Toronto",
+                "state": "Ontaria",
+                "country": "Canada",
+                "start": "2010-05",
+                "end": "2010-08",
+                "color": [17, 76, 148],
+                "what_i_did": [
+                    "Participated in 3 Blackberry Apps: Microsoft MSN, Canpages and Intuit."
+                ]
+            },
+            
+            "8": {
+                "name": "QuinStreet, Inc.",
+                "job_title": "PHP Web Developer",
+                "city": "Foster City",
+                "state": "California",
+                "country": "America",
+                "start": "2010-01",
+                "end": "2010-04",
+                "color": [249, 67, 2],
+                "what_i_did": [
+                    "Built web app using PHP CodeIgniter MVC framework.",
+                    "Optimized and maintained QuinStreet client sites by converting sites to PHP CodeIgniter framework."
+                ]
+            },
+            
+            "9": {
+                "name": "You're Next!, Inc.",
+                "job_title": "Software Engineer",
+                "city": "Waterloo",
+                "state": "Ontaria",
+                "country": "Canada",
+                "start": "2009-05",
+                "end": "2009-08",
+                "color": [46, 141, 184],
+                "what_i_did": [
+                    "Designed and built a new website for the company.",
+                    "Implemented and optimized complicated DB queries for large data.",
+                    "Created a SMS send system, which sends SMS to people when they register, and reminds them when they are the first three patients in the waiting queue.",
+                    "Created a tool that takes AT Commands from client side and send them to Serial Ports using PHP."
+                ]
+            }            
+        }
+    },
+    
+    "projects": {
+        "title": "PROJECTS",
+
+        "projects": {
+            "1": {
+                "summry": "Chen's Yale Zoo Machine Login History",
+                "details": {
+                    "1": {
+                        "detail": "My login history.",
+                        "link": "http://chen-yale-zoo.appspot.com"
+                    }
+                },
+                "start": "2013-08",
+                "end": "2013-08",
+                "color": [165, 24, 49],
+                "what_i_did": [
+                    "Written on Google App Engine using Python.",
+                    "Implemented graph creation using Raphael.",
+                    "Solved shortest path using Dijkstra’s Algorithm."
+                ]
+            },
+            
+            "2": {
+                "summry": "Chen's movement tracking",
+                "details": {
+                    "1": {
+                        "detail": "My movement.",
+                        "link": "http://cx44move.appspot.com"
+                    }
+                },
+                "start": "2013-07",
+                "end": "2013-07",
+                "color": [77, 65, 48],
+                "what_i_did": [
+                    "Implemented location display using Google Maps API.",
+                    "Polished storyline."
+                ]
+            },
+            
+            "3": {
+                "summry": "Web Shortest Path Solving Tool",
+                "details": {
+                    "1": {
+                        "detail": "Shortest Path Solver.",
+                        "link": "http://shortestpathsolver.appspot.com"
+                    }
+                },
+                "start": "2012-10",
+                "end": "2012-10",
+                "color": [175, 153, 249],
+                "what_i_did": [
+                    "Written on Google App Engine using Python.",
+                    "Implemented graph creation using Raphael.",
+                    "Solved shortest path using Dijkstra’s Algorithm."
+                ]
+            },
+            
+            "4": {
+                "summry": "4 Safari Web Games (Only available on Safari)",
+                "details": {
+                    "1": {
+                        "detail": "Sudoku Planet.",
+                        "link": "http://sudoku-planet.appspot.com"
+                    },
+                    "2": {
+                        "detail": "Drawing Board.",
+                        "link": "http://drawing-board.appspot.com"
+                    },
+                    "3": {
+                        "detail": "Renju Room.",
+                        "link": "http://renju-room.appspot.com"
+                    },
+                    "4": {
+                        "detail": "Memory Cards.",
+                        "link": "http://memory-cards.appspot.com"
+                    }
+                },
+                "start": "2011-07",
+                "end": "2011-09",
+                "color": [63, 81, 93],
+                "what_i_did": [
+                    "Written on Google App Engine using Python.",
+                    "Implemented game saving feature using HTML5 JavaScript Database.",
+                    "Applied visual effects using WebKit DOM programming."
+                ]
+            },
+            
+            "5": {
+                "summry": "2 iPhone / iPad Apps (Back End)",
+                "details": {
+                    "1": {
+                        "detail": "The Beer Store \\& Daily Travel.",
+                        "link": ""
+                    }
+                },
+                "start": "2010-03",
+                "end": "2010-03",
+                "color": [255, 71, 99],
+                "what_i_did": [
+                    "Built data storage using Google GQL API.",
+                    "Implemented all the back end API for the client side of the beer store.",
+                    "Implemented twitter user info and comment display for Daily Travel."
+                ]
+            }    
+        }
+    },
+    
+    "education": {
+        "title": "EDUCATION",
+        "educations": {
+            "1": {
+                "school": "Yale University",
+                "city": "New Haven",
+                "state": "Connecticut",
+                "country": "America",
+                "start": 2013,
+                "end": 2014,
+                "color": [16, 76, 146],
+                "degree": "Master of Computer Science"
+            },
+            
+            "2": {
+                "school": "University of Waterloo",
+                "city": "Waterloo",
+                "state": "Ontaria",
+                "country": "Canada",
+                "start": 2007,
+                "end": 2012,
+                "color": [255, 138, 1],
+                "degree": "Honors Bachelor of Computer Science (Co-op)"
+            }
+        }
+    },
+    
+    "interest": {
+        "title": "INTERESTS",
+        "interets": ["Sports", "Movies", "Music", "Rain"]
+    }
+}
