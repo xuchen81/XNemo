@@ -1,0 +1,383 @@
+\documentclass[11pt, a4paper]{moderncv}
+\usepackage{ifthen}
+\definecolor{mainc}{RGB}{217, 229, 250}
+\newboolean{usecolor}
+\setboolean{usecolor}{True}
+\ifthenelse{\boolean{usecolor}}{\moderncvtheme[blue]{classic}}{\moderncvtheme[black]{classic}}
+\usepackage[utf8]{inputenc}
+\usepackage[top=1.1cm, bottom=2.0cm, left=1cm, right=1cm]{geometry}
+\usepackage[firstyear=2006,lastyear=2015]{moderntimeline}
+
+\makeatletter
+\pgfmathsetmacro\tl@textstartabove{\tl@width-2pt}
+\NewDocumentCommand\tldatelabelcventryn{O{center}O{color1}mmmmmmm}{%
+\pgfmathsetmacro\tl@endyear{\tl@lastyear}%
+\pgfmathsetmacro\tl@startfraction{(#3-\tl@firstyear)/(\tl@lastyear-\tl@firstyear)}%
+\pgfmathsetmacro\tl@endfraction{(\tl@endyear-\tl@firstyear)/(\tl@lastyear-\tl@firstyear)}%
+ \cventry{\tikz[baseline]{%
+     \useasboundingbox (0,-1.5ex) rectangle (\hintscolumnwidth,1ex);
+     \fill [\tl@runningcolor] (0,0)
+        rectangle (\hintscolumnwidth,\tl@runningwidth);
+     \fill [#2] (0,0)
+        ++(\tl@startfraction*\hintscolumnwidth,0pt)
+        node [tl@startyear,yshift=5pt,anchor=#1] {#4}
+        node {$\bullet$};
+   }
+}
+{#5}{#6}{#7}{#8}{#9}
+}
+\newcommand\tllabelcventryn[9][color1]{%
+  \gdef\Argi{#1}%
+  \gdef\Argii{#2}%
+  \gdef\Argiii{#3}%
+  \gdef\Argiv{#4}%
+  \gdef\Argv{#5}%
+  \gdef\Argvi{#6}%
+  \gdef\Argvii{#7}%
+  \gdef\Argviii{#8}%
+  \gdef\Argix{#9}%
+  \auxtllabelcventryn
+}
+\def\auxtllabelcventryn#1{%
+  \gdef\Argx{#1}%
+\pgfmathsetmacro\tl@endyear{ifthenelse(\Argiii==0,\tl@lastyear,\Argiii)}
+\pgfmathsetmacro\tl@startfraction{(\Argii-\tl@firstyear)/(\tl@lastyear-\tl@firstyear)}%
+\pgfmathsetmacro\tl@endfraction{(\tl@endyear-\tl@firstyear)/(\tl@lastyear-\tl@firstyear)}%
+ \cventry{\tikz[baseline=0pt]{
+     \fill [\tl@runningcolor] (0,0)
+        rectangle (\hintscolumnwidth,\tl@runningwidth);
+     \useasboundingbox (0,-1.5ex)
+        rectangle (\hintscolumnwidth,1ex);
+     \fill [\Argi] (0,0)
+        ++(\tl@startfraction*\hintscolumnwidth,0pt)
+        node [tl@startyear,anchor=north east] {\Argiv} node [tl@startyear,above] {\Argv}
+        rectangle (\tl@endfraction*\hintscolumnwidth,\tl@width-1pt);
+     \pgfmathsetlength{\pgf@xa}{\Argiii} \ifdim\pgf@xa=0pt
+        \shade [left color=\Argi] (\tl@startfraction*\hintscolumnwidth,0)
+            rectangle (\tl@endfraction*\hintscolumnwidth,\tl@width);
+     \else
+        \fill [\Argi] (\tl@startfraction*\hintscolumnwidth,0)
+            rectangle (\tl@endfraction*\hintscolumnwidth,\tl@width);
+     \fi
+     }
+}
+{\Argvi}{\Argvii}{\Argviii}{\Argix}{\Argx}%
+}
+\makeatother
+\tltextstart[north]{\scriptsize}
+\tltextend[south]{\scriptsize}
+
+
+\makeatletter
+\renewcommand{\tldatelabelcventry}[8][color1]{%
+\pgfmathsetmacro\tl@endyear{\tl@lastyear}%
+\pgfmathsetmacro\tl@startfraction{(#2-\tl@firstyear)/(\tl@lastyear-\tl@firstyear)}%
+\pgfmathsetmacro\tl@endfraction{(\tl@endyear-\tl@firstyear)/(\tl@lastyear-\tl@firstyear)}%
+ \cventry{\tikz[baseline]{%
+     \useasboundingbox (0,-1.5ex) rectangle (\hintscolumnwidth,1ex);
+     \fill [\tl@runningcolor] (0,0)
+        rectangle (\hintscolumnwidth,\tl@runningwidth);
+     \fill [#1] (0,0)
+        ++(\tl@startfraction*\hintscolumnwidth,0pt)
+        node [tl@startyear] {#3}
+        node {$\bullet$};
+   }
+}
+{#4}{#5}{#6}{#7}{#8}
+}
+\makeatother
+
+\makeatletter
+\renewcommand*{\makecvtitle}{%
+  % recompute lengths (in case we are switching from letter to resume, or vice versa)
+  \recomputecvlengths%
+  % optional detailed information box
+  \newbox{\makecvtitledetailsbox}%
+  \savebox{\makecvtitledetailsbox}{%
+    \addressfont\color{color2}%
+    \begin{tabular}[b]{@{}r@{}}%
+      \ifthenelse{\isundefined{\@addressstreet}}{}{\makenewline\addresssymbol\@addressstreet%
+        \ifthenelse{\equal{\@addresscity}{}}{}{\makenewline\@addresscity}}% if \addresstreet is defined, \addresscity will always be defined but could be empty
+      \ifthenelse{\isundefined{\@phone}}{}{\makenewline\phonesymbol\@phone}%
+      \ifthenelse{\isundefined{\@email}}{}{\makenewline\emailsymbol\emaillink{\@email}}%
+      \ifthenelse{\isundefined{\@homepage}}{}{\makenewline\homepagesymbol\httplink{\@homepage}}%
+      \ifthenelse{\isundefined{\@extrainfo}}{}{\makenewline\@extrainfo}%
+    \end{tabular}
+  }%
+  % optional picture box
+  \newbox{\makecvtitlepicturebox}%
+  \savebox{\makecvtitlepicturebox}{%
+    \ifthenelse{\isundefined{\@photo}}%
+    {}%
+    {%
+      \hspace*{\separatorcolumnwidth}%
+      \color{color1}%
+      \setlength{\fboxrule}{\@photoframewidth}%
+      \ifdim\@photoframewidth=0pt%
+        \setlength{\fboxsep}{0pt}\fi%
+      \framebox{\includegraphics[width=\@photowidth]{\@photo}}}}%
+  % name and title
+  \newlength{\makecvtitledetailswidth}\settowidth{\makecvtitledetailswidth}{\usebox{\makecvtitledetailsbox}}%
+  \newlength{\makecvtitlepicturewidth}\settowidth{\makecvtitlepicturewidth}{\usebox{\makecvtitlepicturebox}}%
+  \ifthenelse{\lengthtest{\makecvtitlenamewidth=0pt}}% check for dummy value (equivalent to \ifdim\makecvtitlenamewidth=0pt)
+    {\setlength{\makecvtitlenamewidth}{\textwidth-\makecvtitledetailswidth-\makecvtitlepicturewidth}}%
+    {}%
+  \begin{minipage}[b]{\makecvtitlenamewidth}%
+    \namestyle{\@firstname\ \@familyname}%
+    \ifthenelse{\equal{\@title}{}}{}{\\[1.25em]\titlestyle{\@title}}%
+  \end{minipage}%
+  \hfill%
+  % detailed information
+  \llap{\usebox{\makecvtitledetailsbox}}% \llap is used to suppress the width of the box, allowing overlap if the value of makecvtitlenamewidth is forced
+  {\par\color{color2!50}\rule{\textwidth}{.25ex}\par}% <----- ADDED RULE
+  % optional photo
+  \usebox{\makecvtitlepicturebox}\\[1.0em]%
+  % optional quote
+  \ifthenelse{\isundefined{\@quote}}%
+    {}%
+    {{\centering\begin{minipage}{\quotewidth}\centering\quotestyle{\@quote}\end{minipage}\\[2.0em]}}%
+  \par}% to avoid weird spacing bug at the first section if no blank line is left after \makecvtitle
+\makeatother
+
+\setlength{\hintscolumnwidth}{3.5cm}
+
+\definecolor{firstnamec}{RGB}{185, 185, 185}
+\definecolor{lastnamec}{RGB}{115, 115, 115}
+\firstname{\textcolor{firstnamec}{Chen}}
+\familyname{\textcolor{lastnamec}{Xu}}
+\phone{203-xxx-xxxx}
+\email{xxxx.xu.xxxx@yale.edu}
+\homepage{www.cs.yale.edu/homes/chenxu}
+\begin{document}
+\quote{``I am looking for projects that are cutting-edge, revolutionary and unique; something I can be proud of.''}
+\maketitle
+
+\section{COMPUTER PROFICIENCY}
+
+ \cvitem{Languages}{Scheme, Python, C++, C, Java}
+
+ \cvitem{Web Technologies}{Django, HTML/DOM, JSON, PHP, JavaScript, Node.js, EC2, Redis, MySQL, PostgresSQL, MongoDB, SQLAlchemy, CSS, AJAX, jQuery}
+
+
+\section{WORK EXPERIENCE}
+
+
+\ifthenelse{\boolean{usecolor}}{\definecolor{compcolor}{RGB}{171, 210, 125}}{\definecolor{compcolor}{RGB}{0, 0, 0}}
+\tllabelcventryn[compcolor]
+{2014.42}{2015.0}
+{May, 2014}{Present}
+{CTO (KuKy World Inc)}
+{New Haven}
+{Connecticut}
+{America}{
+\begin{itemize}%
+    \item Everything  \newline{}  
+\end{itemize}}
+
+
+\ifthenelse{\boolean{usecolor}}{\definecolor{compcolor}{RGB}{114, 110, 154}}{\definecolor{compcolor}{RGB}{0, 0, 0}}
+\tllabelcventryn[compcolor]
+{2013.92}{2014.08}
+{Nov, 2013}{Jan, 2014}
+{Python Data Engineer (Dextro.co)}
+{New Haven}
+{Connecticut}
+{America}{
+\begin{itemize}%
+    \item Built and enhanced an automatic data integration system over big data.   \item Designed and implemented an image annotation system for collecting and training object detection data on Amazon Machnical Turk.  \newline{}  
+\end{itemize}}
+
+
+\ifthenelse{\boolean{usecolor}}{\definecolor{compcolor}{RGB}{125, 172, 1}}{\definecolor{compcolor}{RGB}{0, 0, 0}}
+\tllabelcventryn[compcolor]
+{2013.08}{2013.5}
+{Jan, 2013}{Jun, 2013}
+{Server Engineer (Jinguapps.com)}
+{Kitchener}
+{Ontaria}
+{Canada}{
+\begin{itemize}%
+    \item The only server engineer that tracked, recorded, implemented backends for high-volume, transactional applications using PHP and Redis.   \item Implemented backend data tracking and analysis system.   \item Built backend intelligence for people recommendation system.  \newline{}  
+\end{itemize}}
+
+
+\ifthenelse{\boolean{usecolor}}{\definecolor{compcolor}{RGB}{252, 180, 12}}{\definecolor{compcolor}{RGB}{0, 0, 0}}
+\tllabelcventryn[compcolor]
+{2012.33}{2012.75}
+{Apr, 2012}{Sep, 2012}
+{Software Engineer (Mappedin.com)}
+{Kitchener}
+{Ontaria}
+{Canada}{
+\begin{itemize}%
+    \item Enhanced Mappedin Platform under Node.js framework and MongoDB.   \item Created Mappedin map editor.   \item Designed and implemented Mappedin Analytics page to track the usage of Mappedin kiosk using Google Chart.   \item Initiated the new version of Mappedin kiosk.   \item Improved on multiple performance and usability issues on both Mappedin admin tools and the kiosk.  \newline{}  
+\end{itemize}}
+
+
+\ifthenelse{\boolean{usecolor}}{\definecolor{compcolor}{RGB}{138, 173, 63}}{\definecolor{compcolor}{RGB}{0, 0, 0}}
+\tllabelcventryn[compcolor]
+{2011.67}{2012.0}
+{Aug, 2011}{Dec, 2011}
+{Software Engineer (Minted.com)}
+{San Francisco}
+{California}
+{America}{
+\begin{itemize}%
+    \item Worked with a team of world-class software engineers.   \item Implemented my own live chat project with Google Optimizer Multivariable Testing under tight deadline which increased Minted revenue by a significant amount.   \item Enhanced Minted Web-to-Proof system which processes an Adobe InDesign or Illustrator object to an image using Python.   \item Implemented several components of friend referral project and the entire reporting using Python and SQLAlchemy.   \item Improved SEO with features and bug fixes.  \newline{}  
+\end{itemize}}
+
+
+\ifthenelse{\boolean{usecolor}}{\definecolor{compcolor}{RGB}{80, 65, 36}}{\definecolor{compcolor}{RGB}{0, 0, 0}}
+\tllabelcventryn[compcolor]
+{2011.08}{2011.33}
+{Jan, 2011}{Apr, 2011}
+{Software Engineer (IMVU, Inc.)}
+{Kitchener}
+{Ontaria}
+{Canada}{
+\begin{itemize}%
+    \item Developed both website and client using JavaScript, PHP and Python.   \item Implemented new user experience for the sales promotion using jQuery.   \item Integrated IMVU users with Socialvibe promotion ads.   \item Wrote jQuery Qunit tests for internal JS library.  \newline{}  
+\end{itemize}}
+
+
+\ifthenelse{\boolean{usecolor}}{\definecolor{compcolor}{RGB}{17, 76, 148}}{\definecolor{compcolor}{RGB}{0, 0, 0}}
+\tllabelcventryn[compcolor]
+{2010.42}{2010.67}
+{May, 2010}{Aug, 2010}
+{Software Engineer (Xtreme Labs, Inc.)}
+{Toronto}
+{Ontaria}
+{Canada}{
+\begin{itemize}%
+    \item Participated in 3 Blackberry Apps: Microsoft MSN, Canpages and Intuit.  \newline{}  
+\end{itemize}}
+
+
+\ifthenelse{\boolean{usecolor}}{\definecolor{compcolor}{RGB}{249, 67, 2}}{\definecolor{compcolor}{RGB}{0, 0, 0}}
+\tllabelcventryn[compcolor]
+{2010.08}{2010.33}
+{Jan, 2010}{Apr, 2010}
+{PHP Web Developer (QuinStreet, Inc.)}
+{Foster City}
+{California}
+{America}{
+\begin{itemize}%
+    \item Built web app using PHP CodeIgniter MVC framework.   \item Optimized and maintained QuinStreet client sites by converting sites to PHP CodeIgniter framework.  \newline{}  
+\end{itemize}}
+
+
+\ifthenelse{\boolean{usecolor}}{\definecolor{compcolor}{RGB}{46, 141, 184}}{\definecolor{compcolor}{RGB}{0, 0, 0}}
+\tllabelcventryn[compcolor]
+{2009.42}{2009.67}
+{May, 2009}{Aug, 2009}
+{Software Engineer (You're Next!, Inc.)}
+{Waterloo}
+{Ontaria}
+{Canada}{
+\begin{itemize}%
+    \item Designed and built a new website for the company.   \item Implemented and optimized complicated DB queries for large data.   \item Created a SMS send system, which sends SMS to people when they register, and reminds them when they are the first three patients in the waiting queue.   \item Created a tool that takes AT Commands from client side and send them to Serial Ports using PHP.  \newline{}  
+\end{itemize}}
+
+
+
+\section{PROJECTS}
+
+    
+        \ifthenelse{\boolean{usecolor}}{\definecolor{projcolor}{RGB}{165, 24, 49}}{\definecolor{projcolor}{RGB}{0, 0, 0}}
+        \tldatelabelcventry[projcolor]
+        {2013.67}
+        {Aug, 2013}
+        {Chen's Yale Zoo Machine Login History}{}{}{}{
+        \begin{itemize}
+            \item My login history. \url{http://chen-yale-zoo.appspot.com} 
+            \begin{itemize} 
+                 \item Written on Google App Engine using Python.  \item Implemented graph creation using Raphael.  \item Solved shortest path using Dijkstra’s Algorithm. 
+            \end{itemize}
+        \end{itemize}}
+    
+
+    
+        \ifthenelse{\boolean{usecolor}}{\definecolor{projcolor}{RGB}{77, 65, 48}}{\definecolor{projcolor}{RGB}{0, 0, 0}}
+        \tldatelabelcventry[projcolor]
+        {2013.58}
+        {Jul, 2013}
+        {Chen's movement tracking}{}{}{}{
+        \begin{itemize}
+            \item My movement. \url{http://cx44move.appspot.com} 
+            \begin{itemize} 
+                 \item Implemented location display using Google Maps API.  \item Polished storyline. 
+            \end{itemize}
+        \end{itemize}}
+    
+
+    
+        \ifthenelse{\boolean{usecolor}}{\definecolor{projcolor}{RGB}{175, 153, 249}}{\definecolor{projcolor}{RGB}{0, 0, 0}}
+        \tldatelabelcventry[projcolor]
+        {2012.83}
+        {Oct, 2012}
+        {Web Shortest Path Solving Tool}{}{}{}{
+        \begin{itemize}
+            \item Shortest Path Solver. \url{http://shortestpathsolver.appspot.com} 
+            \begin{itemize} 
+                 \item Written on Google App Engine using Python.  \item Implemented graph creation using Raphael.  \item Solved shortest path using Dijkstra’s Algorithm. 
+            \end{itemize}
+        \end{itemize}}
+    
+
+    
+        \ifthenelse{\boolean{usecolor}}{\definecolor{projcolor}{RGB}{63, 81, 93}}{\definecolor{projcolor}{RGB}{0, 0, 0}}
+        \tllabelcventryn[projcolor]
+        {2011.58}
+        {2011.75}
+        {Jul, 2011}
+        {Sep, 2011}{4 Safari Web Games (Currently only available on Safari)}{}{}{}{
+        \begin{itemize} 
+            \item Sudoku Planet. \url{http://sudoku-planet.appspot.com} \item Drawing Board. \url{http://drawing-board.appspot.com} \item Renju Room. \url{http://renju-room.appspot.com} \item Memory Cards. \url{http://memory-cards.appspot.com} 
+            \begin{itemize} 
+                 \item Written on Google App Engine using Python.  \item Implemented game saving feature using HTML5 JavaScript Database.  \item Applied visual effects using WebKit DOM programming. 
+            \end{itemize}
+        \end{itemize}}
+    
+
+    
+        \ifthenelse{\boolean{usecolor}}{\definecolor{projcolor}{RGB}{255, 71, 99}}{\definecolor{projcolor}{RGB}{0, 0, 0}}
+        \tldatelabelcventry[projcolor]
+        {2010.25}
+        {Mar, 2010}
+        {2 iPhone / iPad Apps (Back End)}{}{}{}{
+        \begin{itemize}
+            \item The Beer Store \& Daily Travel. \url{} 
+            \begin{itemize} 
+                 \item Built data storage using Google GQL API.  \item Implemented all the back end API for the client side of the beer store.  \item Implemented twitter user info and comment display for Daily Travel. 
+            \end{itemize}
+        \end{itemize}}
+    
+
+
+
+\section{EDUCATION}
+
+    \ifthenelse{\boolean{usecolor}}{\definecolor{ecolor}{RGB}{16, 76, 146}}{\definecolor{ecolor}{RGB}{0, 0, 0}}
+    \tlcventry[ecolor]{2013}{2014}
+    {Yale University}
+    {New Haven}
+    {Connecticut}
+    {America}
+    {Master of Computer Science}
+
+    \ifthenelse{\boolean{usecolor}}{\definecolor{ecolor}{RGB}{255, 138, 1}}{\definecolor{ecolor}{RGB}{0, 0, 0}}
+    \tlcventry[ecolor]{2007}{2012}
+    {University of Waterloo}
+    {Waterloo}
+    {Ontaria}
+    {Canada}
+    {Honors Bachelor of Computer Science (Co-op)}
+
+
+\section{INTERESTS}
+\cventry{}{Sports, Movies, Music, Rain}{}{}{}{}
+
+\section{REFERENCES}
+\cventry{}{References available upon request}{}{}{}{}
+
+\end{document}
