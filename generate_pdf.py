@@ -10,7 +10,7 @@ def read_data():
         return json_data
 
 def write_data(data):
-    with open('./resume.tex', "w+") as f:
+    with open('./resume.tex', "wb+") as f:
         f.write(data)
     f.close()
 
