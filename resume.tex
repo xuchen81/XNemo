@@ -6,7 +6,7 @@
 \ifthenelse{\boolean{usecolor}}{\moderncvtheme[blue]{classic}}{\moderncvtheme[black]{classic}}
 \usepackage[utf8]{inputenc}
 \usepackage[top=1.1cm, bottom=2.0cm, left=1cm, right=1cm]{geometry}
-\usepackage[firstyear=2006,lastyear=2015]{moderntimeline}
+\usepackage[firstyear=2006,lastyear=2019]{moderntimeline}
 
 \makeatletter
 \pgfmathsetmacro\tl@textstartabove{\tl@width-2pt}
@@ -145,9 +145,9 @@
 \definecolor{lastnamec}{RGB}{115, 115, 115}
 \firstname{\textcolor{firstnamec}{Chen}}
 \familyname{\textcolor{lastnamec}{Xu}}
-\phone{203-xxx-xxxx}
-\email{xxxx.xu.xxxx@yale.edu}
-\homepage{www.cs.yale.edu/homes/chenxu}
+\phone{415-624-7767}
+\email{xuchen81@gmail.com}
+\homepage{xuchen-81.appspot.com}
 \begin{document}
 \quote{``I am looking for projects that are cutting-edge, revolutionary and unique; something I can be proud of.''}
 \maketitle
@@ -162,16 +162,42 @@
 \section{WORK EXPERIENCE}
 
 
+\ifthenelse{\boolean{usecolor}}{\definecolor{compcolor}{RGB}{0, 149, 155}}{\definecolor{compcolor}{RGB}{0, 0, 0}}
+\tllabelcventryn[compcolor]
+{2017.92}{2019.0}
+{Nov, 2017}{Present}
+{Software Engineer (Uber)}
+{San Francisco}
+{California}
+{America}{
+\begin{itemize}%
+    \item Built internal documentation uploading tool.   \item Reimplemented and improved engineering setup for better onboarding experience.  \newline{}  
+\end{itemize}}
+
+
+\ifthenelse{\boolean{usecolor}}{\definecolor{compcolor}{RGB}{88, 162, 53}}{\definecolor{compcolor}{RGB}{0, 0, 0}}
+\tllabelcventryn[compcolor]
+{2015.5}{2017.83}
+{Jun, 2015}{Oct, 2017}
+{Senior Software Engineer (AppDynamics (Acquired by Cisco))}
+{San Francisco}
+{California}
+{America}{
+\begin{itemize}%
+    \item Lead developer on AppDynamics Download Server 2.0.   \item Designed and enhanced the download server deployment cycle with Ansible.  \newline{}  
+\end{itemize}}
+
+
 \ifthenelse{\boolean{usecolor}}{\definecolor{compcolor}{RGB}{171, 210, 125}}{\definecolor{compcolor}{RGB}{0, 0, 0}}
 \tllabelcventryn[compcolor]
-{2014.42}{2015.0}
-{May, 2014}{Present}
+{2014.42}{2015.5}
+{May, 2014}{Jun, 2015}
 {CTO (KuKy World Inc)}
 {New Haven}
 {Connecticut}
 {America}{
 \begin{itemize}%
-    \item Everything  \newline{}  
+    \item Led a team of four, built the entire shopping website.  \newline{}  
 \end{itemize}}
 
 

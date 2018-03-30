@@ -8,11 +8,11 @@
     "personal_info" : {
         "first_name": "Chen",
         "last_name": "Xu",
-        "phone": "203-xxx-xxxx",
-        "email": "xxxx.xu.xxxx@yale.edu",
-        "website": "www.cs.yale.edu/homes/chenxu"
+        "phone": "415-624-7767",
+        "email": "xuchen81@gmail.com",
+        "website": "xuchen-81.appspot.com"
     },
-    
+
     "quote": "``I am looking for projects that are cutting-edge, revolutionary and unique; something I can be proud of.''",
 
     "skill": {
@@ -23,33 +23,63 @@
                 "name": "Languages",
                 "set": ["Scheme", "Python", "C++", "C", "Java"]
             },
-            
+
             "2": {
                 "name": "Web Technologies",
                 "set": ["Django", "HTML/DOM", "JSON", "PHP", "JavaScript", "Node.js", "EC2", "Redis", "MySQL", "PostgresSQL", "MongoDB", "SQLAlchemy", "CSS", "AJAX", "jQuery"]
             }
         }
     },
-    
+
     "experience": {
         "title": "WORK EXPERIENCE",
-        
+
         "companies": {
-            "1": {
+            "a": {
+                "name": "Uber",
+                "job_title": "Software Engineer",
+                "city": "San Francisco",
+                "state": "California",
+                "country": "America",
+                "start": "2017-11",
+                "end": "present",
+                "timeline_color": [0, 149, 155],
+                "what_i_did": [
+                    "Built internal documentation uploading tool.",
+                    "Reimplemented and improved engineering setup for better onboarding experience."
+                ]
+            },
+
+            "b": {
+                "name": "AppDynamics (Acquired by Cisco)",
+                "job_title": "Senior Software Engineer",
+                "city": "San Francisco",
+                "state": "California",
+                "country": "America",
+                "start": "2015-06",
+                "end": "2017-10",
+                "timeline_color": [88, 162, 53],
+                "what_i_did": [
+                    "Lead developer on AppDynamics Download Server 2.0.",
+                    "Designed and enhanced the download server deployment cycle with Ansible."
+                ]
+            },
+
+            "c": {
                 "name": "KuKy World Inc",
                 "job_title": "CTO",
                 "city": "New Haven",
                 "state": "Connecticut",
                 "country": "America",
                 "start": "2014-05",
-                "end": "present",
+                "end": "2015-06",
                 "timeline_color": [171, 210, 125],
                 "what_i_did": [
-                    "Everything"
+                    "Led a team of four, built the entire shopping website."
                 ]
             },
-            
-            "2": {
+
+            "d": {
                 "name": "Dextro.co",
                 "job_title": "Python Data Engineer",
                 "city": "New Haven",
@@ -63,8 +93,8 @@
                     "Designed and implemented an image annotation system for collecting and training object detection data on Amazon Machnical Turk."
                 ]
             },
-            
-            "3": {
+
+            "e": {
                 "name": "Jinguapps.com",
                 "job_title": "Server Engineer",
                 "city": "Kitchener",
@@ -79,9 +109,8 @@
                     "Built backend intelligence for people recommendation system."
                 ]
             },
-            
-            
-            "4": {
+
+            "f": {
                 "name": "Mappedin.com",
                 "job_title": "Software Engineer",
                 "city": "Kitchener",
@@ -98,8 +127,8 @@
                     "Improved on multiple performance and usability issues on both Mappedin admin tools and the kiosk."
                 ]
             },
-            
-            "5": {
+
+            "g": {
                 "name": "Minted.com",
                 "job_title": "Software Engineer",
                 "city": "San Francisco",
@@ -117,7 +146,7 @@
                 ]
             },
 
-            "6": {
+            "h": {
                 "name": "IMVU, Inc.",
                 "job_title": "Software Engineer",
                 "city": "Kitchener",
@@ -134,7 +163,7 @@
                 ]
             },
 
-            "7": {
+            "i": {
                 "name": "Xtreme Labs, Inc.",
                 "job_title": "Software Engineer",
                 "city": "Toronto",
@@ -147,8 +176,8 @@
                     "Participated in 3 Blackberry Apps: Microsoft MSN, Canpages and Intuit."
                 ]
             },
-            
-            "8": {
+
+            "j": {
                 "name": "QuinStreet, Inc.",
                 "job_title": "PHP Web Developer",
                 "city": "Foster City",
@@ -162,8 +191,8 @@
                     "Optimized and maintained QuinStreet client sites by converting sites to PHP CodeIgniter framework."
                 ]
             },
-            
-            "9": {
+
+            "k": {
                 "name": "You're Next!, Inc.",
                 "job_title": "Software Engineer",
                 "city": "Waterloo",
@@ -178,10 +207,10 @@
                     "Created a SMS send system, which sends SMS to people when they register, and reminds them when they are the first three patients in the waiting queue.",
                     "Created a tool that takes AT Commands from client side and send them to Serial Ports using PHP."
                 ]
-            }            
+            }
         }
     },
-    
+
     "projects": {
         "title": "PROJECTS",
 
@@ -220,7 +249,7 @@
                     "Solved shortest path using Dijkstra’s Algorithm."
                 ]
             },
-            
+
             "3": {
                 "summry": "Chen's movement tracking",
                 "details": {
@@ -237,7 +266,7 @@
                     "Polished storyline."
                 ]
             },
-            
+
             "4": {
                 "summry": "Web Shortest Path Solving Tool",
                 "details": {
@@ -255,7 +284,7 @@
                     "Solved shortest path using Dijkstra’s Algorithm."
                 ]
             },
-            
+
             "5": {
                 "summry": "4 Safari Web Games (Only available on Safari)",
                 "details": {
@@ -285,7 +314,7 @@
                     "Applied visual effects using WebKit DOM programming."
                 ]
             },
-            
+
             "6": {
                 "summry": "2 iPhone / iPad Apps (Back End)",
                 "details": {
@@ -302,10 +331,10 @@
                     "Implemented all the back end API for the client side of the beer store.",
                     "Implemented twitter user info and comment display for Daily Travel."
                 ]
-            }    
+            }
         }
     },
-    
+
     "education": {
         "title": "EDUCATION",
         "educations": {
@@ -319,7 +348,7 @@
                 "timeline_color": [16, 76, 146],
                 "degree": "Master of Computer Science"
             },
-            
+
             "2": {
                 "school": "University of Waterloo",
                 "city": "Waterloo",
@@ -332,7 +361,7 @@
             }
         }
     },
-    
+
     "interest": {
         "title": "INTERESTS",
         "interets": ["Sports", "Movies", "Music", "Rain"]
